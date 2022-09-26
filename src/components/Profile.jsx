@@ -27,9 +27,13 @@ const ListItem = styled.p`
   text-align: center;
 `;
 
-const Item = styled.p``;
+const Item = styled.span`
+  display: block;
+`;
 
-const ItemValue = styled.span``;
+const ItemValue = styled.span`
+  display: block;
+`;
 
 export const Profile = ({ username, tag, location, stats, avatar }) => {
   return (
