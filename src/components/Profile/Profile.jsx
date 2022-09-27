@@ -1,45 +1,20 @@
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Box } from './Box';
-
-const Image = styled.img`
-  display: block;
-  max-width: 100px;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-const UserName = styled.p`
-  text-align: center;
-`;
-
-const Tag = styled.p`
-  text-align: center;
-`;
-
-const Location = styled.p`
-  text-align: center;
-`;
-
-const ListItem = styled.p`
-  margin: auto;
-  padding: 10px 0;
-  text-align: center;
-`;
-
-const Item = styled.span`
-  display: block;
-`;
-
-const ItemValue = styled.span`
-  display: block;
-`;
+import { Box } from '../Box/Box';
+import {
+  Image,
+  UserName,
+  Tag,
+  Location,
+  ListItem,
+  Item,
+  ItemValue,
+} from './Profile.styled';
 
 export const Profile = ({ username, tag, location, stats, avatar }) => {
   return (
     <Box bg="primary" m="50px auto" width="cardWidth">
       <Box>
-        <Image src={avatar}></Image>
+        <Image src={avatar} />
         <UserName>{username}</UserName>
         <Tag>{tag}</Tag>
         <Location>{location}</Location>

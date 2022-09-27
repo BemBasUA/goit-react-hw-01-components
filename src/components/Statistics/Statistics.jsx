@@ -1,32 +1,9 @@
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Box } from './Box';
-
-const TitleText = styled.h2`
-  text-align: center;
-`;
-
-const ListItem = styled.li`
-  list-style: none;
-  margin: auto;
-  padding: 10px 0;
-  text-align: center;
-`;
-
-const Item = styled.span`
-  display: block;
-`;
-
-const ItemValue = styled.span`
-  display: block;
-`;
+import { Box } from '../Box/Box';
+import { TitleText, ListItem, Item, ItemValue } from './Statistics.styled';
 
 const Title = ({ title }) => {
-  if (title) {
-    return <TitleText>{title}</TitleText>;
-  } else {
-    return <TitleText>Upload stats</TitleText>;
-  }
+  return <TitleText>{title}</TitleText>;
 };
 
 const List = ({ stats }) => {
@@ -41,7 +18,7 @@ const List = ({ stats }) => {
 export const Statistics = ({ title, stats }) => {
   return (
     <Box as="section" bg="primary" m="50px auto" width="cardWidth">
-      <Title title={title}></Title>
+      {title && <Title title={title} />}
       <Box
         as="ul"
         display="flex"
@@ -50,7 +27,7 @@ export const Statistics = ({ title, stats }) => {
         bg="secondary"
         justifyContent="space-evenly"
       >
-        <List stats={stats}></List>
+        <List stats={stats} />
       </Box>
     </Box>
   );
